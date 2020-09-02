@@ -182,7 +182,6 @@ public class Main {
 			return (int)(x-0.5)/100.0;
 		}
 		
-		//(int)(x*100+0.5)/100.0
 	}
 }
 
