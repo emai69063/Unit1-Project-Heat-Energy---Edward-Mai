@@ -92,7 +92,7 @@ public class Main {
 			}
 		}
 		
-		heatEnergy = roundTwoPlaces(heatEnergy);
+		heatEnergy = roundThreePlaces(heatEnergy);
 		
 		System.out.println("Total Heat Energy:"+ heatEnergy +" kJ");
 
@@ -119,32 +119,32 @@ public class Main {
 	}
 	public static double melting(double mass)
 	{
-		double heat = roundTwoPlaces(mass*0.33);
+		double heat = roundThreePlaces(mass*0.33);
 		System.out.println("Phase Change (Freezing): "+ heat + " kJ" );
 		return heat;
 		
 	}
 	
 	public static double freezing(double mass){
-		double heat = roundTwoPlaces(mass*-0.33);
+		double heat = roundThreePlaces(mass*-0.33);
 		System.out.println("Phase Change (Melting): "+ heat + " kJ" );
 		return heat;		
 	}
 	
 	public static double condensing(double mass) {
-		double heat = roundTwoPlaces(mass*-2.257);
+		double heat = roundThreePlaces(mass*-2.257);
 		System.out.println("Phase Change (Condensing): "+ heat + " kJ" );
 		return heat;
 	}
 	
 	public static double boiling(double mass) {
-		double heat = roundTwoPlaces(mass*2.257);
+		double heat = roundThreePlaces(mass*2.257);
 		System.out.println("Phase Change (Boiling): "+ heat + " kJ" );
 		return heat;
 	}
 	
 	public static double solidHeat(double initTemp, double finTemp, double mass) {
-		double heat = roundTwoPlaces((2.108)*mass*(finTemp - initTemp));
+		double heat = roundThreePlaces((0.002108)*mass*(finTemp - initTemp));
 		if(heat > 0) {
 			System.out.println("Heating(Solid):" + heat+" kJ");
 		} else {
@@ -155,7 +155,7 @@ public class Main {
 	}
 	
 	public static double liquidHeat(double initTemp, double finTemp, double mass) {
-		double heat =roundTwoPlaces((4.184)*mass*(finTemp - initTemp));
+		double heat = roundThreePlaces((0.004184)*mass*(finTemp - initTemp));
 		if(heat > 0) {
 			System.out.println("Heating(Liquid):" + heat+" kJ");
 		} else {
@@ -165,7 +165,7 @@ public class Main {
 	}
 
 	public static double gasHeat(double initTemp, double finTemp, double mass) {
-		double heat = roundTwoPlaces((1.996)*mass*(finTemp - initTemp));
+		double heat = roundThreePlaces((0.001996)*mass*(finTemp - initTemp));
 		if(heat > 0) {
 			System.out.println("Heating(Gas):" + heat+" kJ");
 		} else {
@@ -173,13 +173,13 @@ public class Main {
 		}
 		return heat;
 	}
-	public static double roundTwoPlaces(double x) {
-		x *= 100;
+	public static double roundThreePlaces(double x) {
+		x *= 1000;
 		
 		if(x>0) {
-			return (int)(x+0.5)/100.0;
+			return (int)(x+0.5)/1000.0;
 		}else {
-			return (int)(x-0.5)/100.0;
+			return (int)(x-0.5)/1000.0;
 		}
 		
 	}
