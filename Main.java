@@ -126,7 +126,7 @@ public class Main {
 	}
 	
 	public static double freezing(double mass){
-		double heat = roundThreePlaces(mass*-0.33);
+		double heat = roundThreePlaces(mass*-0.333);
 		System.out.println("Phase Change (Melting): "+ heat + " kJ" );
 		return heat;		
 	}
