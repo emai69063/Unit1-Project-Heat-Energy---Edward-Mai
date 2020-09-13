@@ -5,9 +5,13 @@ import java.math.*;
 public class Main {
 
 	
+	
+	static int phaseDif;
+	
 	public static void main(String args[]) {
 		Scanner input = new Scanner(System.in);
 		double heatEnergy = 0;
+		
 		
 		System.out.println("Enter the mass in grams.");
 		double mass = input.nextDouble();
@@ -21,24 +25,24 @@ public class Main {
 		
 		int iPhase = phaseDetection(iTemp);
 		int fPhase = phaseDetection(fTemp);
-		int phaseDif = fPhase - iPhase;
+		phaseDif = fPhase - iPhase;
 		
 		// Printing out starting temperature and ending temperature along with current phase.
 		
 		if(iPhase == 1) {
 			System.out.println("Starting Temperature: "+ iTemp + "C (water ice)");
 		}else if(iPhase == 3) {
-			System.out.println("Starting Temperature: "+ iTemp + "C (liquid vapor)");
+			System.out.println("Starting Temperature: "+ iTemp + "C (water vapor)");
 		}else {
-			System.out.println("Starting Temperature: "+ iTemp + "C (water water)");
+			System.out.println("Starting Temperature: "+ iTemp + "C (liquid water)");
 		}
 		
 		if(fPhase == 1) {
 			System.out.println("Ending Temperature: "+ fTemp + "C (water ice)");
 		}else if(fPhase == 3) {
-			System.out.println("Ending Temperature: "+ fTemp + "C (liquid vapor)");
+			System.out.println("Ending Temperature: "+ fTemp + "C (water vapor)");
 		}else {
-			System.out.println("Ending Temperature: "+ fTemp + "C (water water)");
+			System.out.println("Ending Temperature: "+ fTemp + "C (liquid water)");
 		}
 		
 		
